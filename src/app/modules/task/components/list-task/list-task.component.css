@@ -1,0 +1,10 @@
+.background {
+ width: 100vw;
+ height: 100vh;
+ background-image: url(../../../../../assets/background-image.jpg);
+ background-size: cover;
+};
+
+.custom-bg-color {
+  opacity: 0.6;
+}
