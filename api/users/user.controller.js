@@ -5,10 +5,9 @@ const {
   getUsers,
   updateUser,
   deleteUser,
-} = require("./user.services");
+} = require("./user.service");
 const { hashSync, genSaltSync, compareSync } = require("bcrypt");
 const { sign } = require("jsonwebtoken");
-
 module.exports = {
   createUser: (req, res) => {
     const body = req.body;
@@ -43,8 +42,8 @@ module.exports = {
       const result = compareSync(body.password, results.password);
       if (result) {
         results.password = undefined;
-        const jsontoken = sign({ result: results }, "qwe1234", {
-          expiresIn: "1h",
+        const jsontoken = sign({ result: results }, "admin", {
+          expiresIn: "72h",
         });
         return res.json({
           success: 1,
@@ -98,7 +97,13 @@ module.exports = {
     updateUser(body, (err, results) => {
       if (err) {
         console.log(err);
-        return;
+        return false;
+      }
+      if (!results) {
+        return res.json({
+          success: 0,
+          message: "Failed to update user",
+        });
       }
       return res.json({
         success: 1,
