@@ -9,14 +9,23 @@ import { Task } from '../models/task';
 export class CrudService {
  private tasks: Task[] = [
   {
+    id: crypto.randomUUID(),
     title: 'Lavar o rosto',
     category: "Higiene",
     done: false,
     deadline: "2023-11-15T09:00:00.000",
   },
   {
+    id: crypto.randomUUID(),
     title: 'Lavar o pé',
     category: "Higiene",
+    done: false,
+    deadline: "2023-11-15T09:00:00.000",
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'Caminhar',
+    category: "Exe",
     done: false,
     deadline: "2023-11-15T09:00:00.000",
   }
@@ -34,5 +43,17 @@ export class CrudService {
   public getTask(): Task[] {
     return this.tasks;
   }
+
+  public getById(id: string): Task | undefined {
+    return this.tasks.find((task) => task.id === id);
+  }
+  
+  public delete(id: string) {
+    this.tasks = this.tasks.filter(task => task.id !== id);
+  }
+
+  // public createTask() {
+  //   this.tasks
+  // }
 
 }

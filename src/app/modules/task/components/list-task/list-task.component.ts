@@ -14,7 +14,12 @@ export class ListTaskComponent implements OnInit {
   constructor(private tasksService: CrudService) {}
 
   ngOnInit() {
-    this.tasks = this.tasksService.getTask()
+    this.tasks = this.tasksService.getTask();
+  }
+
+  public deleteUser(id: string): void {
+    this.tasksService.delete(id);
+    this.ngOnInit();
   }
 
   // public getTasks(): void {

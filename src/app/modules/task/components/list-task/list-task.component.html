@@ -6,26 +6,7 @@
         <p class="mb-0">Hora</p>
         <p class="mb-0">data</p>
       </div>
-      <div><button class="btn btn-primary"><i class="fa-solid fa-circle-plus"></i> Add Task</button></div>
-    </div>
-
-    <div class="my-3">
-      <div class="p-2 shadow border card custom-bg-color">
-        <div class="row ps-3 d-flex align-items-center">
-          <div class="col-1"><input type="checkbox"></div>
-          <div class="col-7">
-            <h5 class="mb-0">Piscininha</h5>
-            <div>Lazer - 15h</div>
-          </div>
-          <div class="col-4 d-flex justify-content-end">
-            <button class="btn btn-outline-success me-2">
-              <i class="fa-solid fa-pen-to-square"></i></button>
-            <button class="btn btn-outline-danger">
-              <i class="fa fa-trash"></i>
-            </button>
-          </div>
-        </div>
-      </div>
+      <div><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#taskModal"><i class="fa-solid fa-circle-plus"></i> Add Task</button></div>
     </div>
 
     <div class="my-3" *ngFor="let task of tasks">
@@ -40,7 +21,7 @@
             <button class="btn btn-outline-success me-2">
               <i class="fa-solid fa-pen-to-square"></i></button>
             <button class="btn btn-outline-danger">
-              <i class="fa fa-trash"></i>
+              <i class="fa fa-trash" (click)="deleteUser(task.id!)"></i>
             </button>
           </div>
         </div>
@@ -50,16 +31,28 @@
 
   </div>
 </div>
-<!-- <div class="container">
-  <div>
-    <input type="checkbox">
-    <div>
-      <h4>Título</h4>
-      <p>Categoria - Hora</p>
-    </div>
-    <div>
-      <button>e</button>
-      <button>x</button>
+
+<!-- Modal -->
+<div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Teste</h5>
+      </div>
+      <div class="modal-body">
+        <form>
+        <label for="title" class="form-label">Título</label>
+        <input type="text" id="title" name="title" class="form-control">
+        <label for="category" class="form-label">Categoria</label>
+        <input type="text" id="category" name="category" class="form-control">
+        <label for="deadline" class="form-label">Hora</label>
+        <input type="text" id="deadline" name="deadline" class="form-control">
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salvar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+      </div>
     </div>
   </div>
-</div> -->
+</div>
