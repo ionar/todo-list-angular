@@ -1,6 +1,7 @@
 export interface Task {
-  id?: 'string';
-  title: 'string';
-  category: 'string';
-  time: Date;
+  id?: string;
+  title: string;
+  category: string;
+  done: boolean;
+  deadline: string;
 }

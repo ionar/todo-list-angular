@@ -14,21 +14,21 @@ export class ListTaskComponent implements OnInit {
   constructor(private tasksService: CrudService) {}
 
   ngOnInit() {
-    this.getTasks();
+    this.tasks = this.tasksService.getTask()
   }
 
-  public getTasks(): void {
-    this.tasksService
-    .getTasks()
-    .pipe(first())
-    .subscribe({
-      next: (res: Task[]) => {
-        this.tasks = res;
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
-  }
+  // public getTasks(): void {
+  //   this.tasksService
+  //   .getTasks()
+  //   .pipe(first())
+  //   .subscribe({
+  //     next: (res: Task[]) => {
+  //       this.tasks = res;
+  //     },
+  //     error: (err) => {
+  //       console.log(err);
+  //     }
+  //   });
+  // }
 
 }
