@@ -52,8 +52,8 @@ export class CrudService {
     this.tasks = this.tasks.filter(task => task.id !== id);
   }
 
-  // public createTask() {
-  //   this.tasks
-  // }
+  public createTask(task: Task): void {
+    this.tasks.push({ ...task, id: crypto.randomUUID() });
+  }
 
 }

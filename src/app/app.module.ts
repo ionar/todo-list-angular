@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TaskComponent } from './modules/task/task.component';
 import { ListTaskComponent } from './modules/task/components/list-task/list-task.component';
 import { LoginComponent } from './modules/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { LoginComponent } from './modules/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
