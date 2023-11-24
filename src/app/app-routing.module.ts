@@ -7,7 +7,7 @@ import { ListTaskComponent } from './modules/task/components/list-task/list-task
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'list-user', component: ListTaskComponent},
+  { path: 'list-task', component: ListTaskComponent},
   { path: '', component: ListTaskComponent},
 ];
 

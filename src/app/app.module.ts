@@ -13,11 +13,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterOutlet } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { ConfigService } from 'src/config/config.service';
+import { ConfigService } from '../config/config.service';
 import { TaskComponent } from './modules/task/task.component';
 import { ListTaskComponent } from './modules/task/components/list-task/list-task.component';
-import { LoginComponent } from './modules/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
