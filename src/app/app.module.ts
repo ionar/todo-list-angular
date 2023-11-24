@@ -15,9 +15,19 @@ import { RouterOutlet } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConfigService } from 'src/config/config.service';
+import { TaskComponent } from './modules/task/task.component';
+import { ListTaskComponent } from './modules/task/components/list-task/list-task.component';
+import { LoginComponent } from './modules/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    TaskComponent,
+    ListTaskComponent
+  ],
   providers: [ConfigService],
   bootstrap: [AppComponent],
   imports: [
@@ -33,6 +43,10 @@ import { ConfigService } from 'src/config/config.service';
     RouterOutlet,
     HttpClientModule,
     ReactiveFormsModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
 })
+
 export class AppModule {}
